@@ -25,5 +25,15 @@ class Solution {
             }
         }
         return res;
+
+        //time : O(n) space : O(2*n)
+        int temp[]=new int[nums.length];
+        int x=0;
+        for(int i=0;i<n;i++) {
+            temp[x++]=nums[i];
+            temp[x++]=nums[i+n];
+        }
+        
+        return temp;
     }
 }
