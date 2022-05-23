@@ -76,7 +76,7 @@ class Solution {
         // 3. time : O(n) space : O(n) 
 
 
-        
+
         HashMap<Integer,Integer> map = new HashMap<>();
         
         for(int i=0;i<nums.length;i++){
@@ -98,6 +98,21 @@ class Solution {
         }
         
         return totalPairs;
+
+        //EFFICIENT SOLUTION 
+
+        // time : O(n) space : O(1) 
+
+
+        int[] counts = new int[101];
+        
+        int toReturn = 0;
+        for(int num : nums) {
+            toReturn += counts[num];
+            counts[num]++;
+        }
+        
+        return toReturn;
     }
     
 }
