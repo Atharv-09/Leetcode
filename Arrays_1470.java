@@ -1,0 +1,29 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        
+        
+        // time : O(2n) space : O(2*n)
+        int pointer1 = 0;
+        int pointer2 = n;
+        int shuffled[] = new int[2*n];
+        
+        for(int i=0;i<2*n;){
+            shuffled[i++] = nums[pointer1++];
+            shuffled[i++] = nums[pointer2++];
+        }
+        
+        return shuffled;
+        
+        // time : O(2*n) space : O(2*n)
+        int[] res = new int[2*n];
+        int k = 0;
+        for(int i=0;i<nums.length;i++){
+            if(i%2==0){
+                res[i] = nums[k++];
+            }else{
+                res[i] = nums[k+n-1];
+            }
+        }
+        return res;
+    }
+}
