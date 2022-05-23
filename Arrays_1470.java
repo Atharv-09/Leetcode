@@ -35,5 +35,15 @@ class Solution {
         }
         
         return temp;
+
+        // time :O(n) space : O(2n)
+        int[] temp = new int[2*n];
+        temp[0] = nums[0];
+        temp[1] = nums[n];
+        for(int i=1;i<n;i++){        
+            temp[2*i] = nums[i];
+            temp[2*i+1] = nums[n+i]; 
+        }
+        return temp;
     }
 }
